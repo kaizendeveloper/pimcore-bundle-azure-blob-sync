@@ -1,6 +1,6 @@
 <?php
 
-namespace AzurePimcoreBundle\AzurePimcoreBundle\Controller;
+namespace AzurePimcoreBundle\Controller;
 
 use Pimcore\Controller\FrontendController;
 use Pimcore\Cache;
@@ -22,7 +22,6 @@ use Pimcore\Model\Tool\Tag;
 use Pimcore\Model\WebsiteSetting;
 use Pimcore\Tool;
 use Symfony\Component\EventDispatcher\EventDispatcherInterface;
-use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -47,7 +46,7 @@ class AzureSettingController extends FrontendController {
 
         $values = Config::getAzureConfig();
         $valueArray = $values->toArray();
-        $optionsString = [];
+        $optionsString = array();
         if ($valueArray['azureOptions']) {
             foreach ($valueArray['azureOptions'] as $key => $value) {
                 $tmpStr = '--'.$key;
@@ -59,9 +58,9 @@ class AzureSettingController extends FrontendController {
         }
         $valueArray['azureOptions'] = implode("\n", $optionsString);
 
-        $response = [
+        $response = array(
             'values' => $valueArray
-        ];
+        );
 
         return $this->json($response);
     }
@@ -80,7 +79,7 @@ class AzureSettingController extends FrontendController {
         $values = $this->decodeJson($request->get('data'));
 
         if ($values['azureOptions']) {
-            $optionArray = [];
+            $optionArray = array();
             $lines = explode("\n", $values['azureOptions']);
             foreach ($lines as $line) {
                 $parts = explode(' ', substr($line, 2));
@@ -96,7 +95,7 @@ class AzureSettingController extends FrontendController {
         $configFile = \Pimcore\Config::locateConfigFile('azure.php');       
         File::putPhpFile($configFile, to_php_data_file_format($values));
 
-        return $this->json(['success' => true]);
+        return $this->json(array('success' => true));
     }
     
     /**
@@ -109,7 +108,7 @@ class AzureSettingController extends FrontendController {
      *
      * @return array|\stdClass
      */
-    protected function decodeJson($json, $associative = true, array $context = [], bool $useAdminSerializer = true)
+    protected function decodeJson($json, $associative = true, array $context = array(), $useAdminSerializer = true)
     {
         /** @var SerializerInterface|DecoderInterface $serializer */
         $serializer = null;

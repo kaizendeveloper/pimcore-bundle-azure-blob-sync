@@ -13,7 +13,7 @@
  *  @license    http://www.pimcore.org/license     GPLv3 and PEL
  */
 
-namespace AzurePimcoreBundle\AzurePimcoreBundle;
+namespace AzurePimcoreBundle;
 
 use Pimcore\Extension\Bundle\AbstractPimcoreBundle;
 use \Pimcore\Model\User\Permission\Definition;
@@ -21,10 +21,10 @@ use \Pimcore\Model\User\Permission\Definition;
 class AzurePimcoreBundle extends AbstractPimcoreBundle {
    
     public function getJsPaths() {
-        return [
+        return array(
             '/bundles/azurepimcore/js/pimcore/startup.js',
             '/bundles/azurepimcore/js/pimcore/azure.js'
-        ];
+        );
     }
     
     public function getInstaller() {

@@ -1,6 +1,10 @@
 # Pimcore Azure Bundle
 
+### Fork of rohitrajv5/pimcore-bundle-azure-blob-sync on his:
+
 Pimcore Azure Bundle is use to push Pimcore Assets on Microsoft Azure Blob Storage
+
+### Try to fix: PS4 compliance issues
 
 ## Compatible with Pimcore > v5.6. Tested on Pimcore 6
 
@@ -8,7 +12,7 @@ Pimcore Azure Bundle is use to push Pimcore Assets on Microsoft Azure Blob Stora
 
 Install with Composer
 ```bash
-composer require rohitrajv5/pimcore-bundle-azure-blob-sync
+composer require kaizendeveloper/pimcore-bundle-azure-blob-sync
 ```
 
 #### Execute following commands
