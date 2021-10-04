@@ -1,6 +1,6 @@
 {
   "name": "kaizendeveloper/pimcore-bundle-azure-blob-sync",
-  "description": "Fork of Rohit Raj Verma's project in order to correct some PSR4 errors shown on some Pimcore installs. <br> This bundle use to sync all records Assets from Pimcore to Azure Blob Storage",
+  "description": "Fork of Rohit Raj Verma's project in order to correct some PSR4 errors shown on some Pimcore installs.  This bundle use to sync all records Assets from Pimcore to Azure Blob Storage",
   "type": "pimcore-bundle",
   "license": "GPL-3.0+", 
   "keywords": [
